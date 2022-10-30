@@ -10,10 +10,20 @@ var instance = M.Slider.init(elem, options);
 var prevButton = document.querySelector('.slide-prev');
 var nextButton = document.querySelector('.slide-next');
 
-prevButton.onclick = function(){
-  instance.prev();
-};
+if(prevButton){
+  prevButton.onclick = function(){
+    instance.prev();
+  };
+}
 
-nextButton.onclick = function(){
-  instance.next();
-};
+if(nextButton){
+  nextButton.onclick = function(){
+    instance.next();
+  };
+}
+
+
+
+document.getElementById("wsnavtoggle").addEventListener("click", function () {
+  document.getElementsByTagName("BODY")[0].classList.toggle("wsactive");
+});
